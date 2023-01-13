@@ -14,7 +14,7 @@ driver.find_element(By.XPATH, '//*[@id="user-name"]').send_keys("standard_user")
 driver.find_element(By.ID, "password").send_keys("secret_sauce")
 driver.find_element(By.CLASS_NAME, "submit-button").click()
 
-driver.implicitly_wait(10)
+driver.implicitly_wait(5)
 driver.maximize_window()
 
 time.sleep(5)

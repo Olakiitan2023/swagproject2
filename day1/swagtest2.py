@@ -13,6 +13,9 @@ driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
 
 driver.get("https://www.saucedemo.com/")
 
+driver.implicitly_wait(10)
+driver.maximize_window()
+
 driver.find_element(By.XPATH, '//*[@id="user-name"]').send_keys("standard_user")
 driver.find_element(By.ID, "password").send_keys("secret_sauce")
 driver.find_element(By.CLASS_NAME, "submit-button").click()
@@ -33,9 +36,7 @@ driver.find_element(By.XPATH, '//*[@id="add-to-cart-sauce-labs-fleece-jacket"]')
 driver.find_element(By.XPATH, '//*[@id="add-to-cart-sauce-labs-onesie"]').click()
 time.sleep(5)
 
-
 driver.find_element(By.XPATH, '//*[@id="shopping_cart_container"]/a').click()
-
 
 driver.find_element(By.XPATH, '//*[@id="remove-sauce-labs-onesie"]').click()
 driver.find_element(By.XPATH, '//*[@id="remove-sauce-labs-bike-light"]').click()
@@ -61,15 +62,10 @@ time.sleep(5)
 driver.find_element(By.XPATH, '//*[@id="continue"]').click()
 driver.find_element(By.XPATH, '//*[@id="finish"]').click()
 
-
-
-
-
-driver.implicitly_wait(10)
-driver.maximize_window()
+driver.find_element(By.XPATH, '//*[@id="back-to-products"]').click()
+driver.find_element(By.XPATH, '//*[@id="react-burger-menu-btn"]').click()
+driver.find_element(By.XPATH, '//*[@id="logout_sidebar_link"]').click()
 
 time.sleep(5)
 
 driver.quit()
-
-
